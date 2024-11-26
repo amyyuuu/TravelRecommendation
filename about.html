@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBooklet</title>
+
+    <style>
+        body, html {
+            display: flex;
+            justify-content: space-between;
+            height: 100vh; /* vh stands for viewport height */
+        }   
+
+        nav {
+	    	position: fixed; 
+			top: 0;
+			left: 0;
+	        width: 100%; 
+
+			background-color:#333; 
+			color:#fff; 
+		
+	        display:flex;
+	        justify-content:center ;
+    	    align-items:center ; 
+        	padding:.5em;
+        	z-index:+2;
+
+		}
+
+	    .nav-left,.nav-center,.nav-right{
+	    	flex-grow :1 ;
+	    } 
+
+    	.nav-center > a {
+    		margin :0px 20px ; 
+    		text-decoration:none ;
+    		color:white ;
+    	}  
+
+
+
+
+	   .introduction-text { 
+          	position:relative;/* Relative to its natural position */  
+		  	top :20% ;/* Down from top to give space from navbar */  
+		  	left :10% ;
+
+	        color:white ;/* Text color for readability against dark bg*/ 
+    		font-family:'Segoe UI', Tahoma, Geneva, Verdana,sans-serif ;
+    		text-shadow :-1px -1px #000,
+    					-2px -2px #000,
+    					-3px -3px #000;
+
+		  }
+        
+          .welcome-title {
+              font-size:35px; /* Large font size for the welcome title */
+              margin-bottom:16px; /* Space after title */
+          }
+
+          .introduction-paragraph {
+              font-size:12px; /* Smaller than the title but legible for introductory text */
+              max-width:400px; /* Maximum width of paragraph for better readability */
+              line-height:1.6; /* Spacing between lines within paragraph */
+          }
+        
+         
+        .about-background {
+            width:120%;
+            position:absolute; 
+            top :0px; /* Offset by the height of the navigation bar */
+		    left :0 ;
+		    right :0 ;
+		    bottom :0 ;
+
+		    background-image:url('about page.jpg');
+    	    background-size:cover;
+        	background-position:center center;
+	        background-repeat:no-repeat;
+
+		    z-index:-1; /* Behind contents but in front of any negative indexed items if present.*/
+		  }   
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav><!-- Navigation -->
+        <!-- Left Aligned -->
+        <div class="nav-left">TravelBooklet</div>
+        
+        <!-- Center Aligned Links--> 
+        <div class="nav-center">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+    </nav>
+    <div class="about-background"></div>
+
+        <div class="introduction-text">  
+            <h1 class="welcome-title">About US</h1>   
+            <p class="introduction-paragraph">
+                Welcome to Travelbooklet, your trusted companion in crafting unforgettable travel experiences. Born from a passion for exploration and a commitment to convenience, our platform is designed for globetrotters seeking both inspiration and hassle-free hotel bookings. At the core of our philosophy lies an unwavering dedication to share insightful travel information while offering a curated selection of accommodations that cater to every taste and budget. Our community thrives on shared stories and tips, ensuring every journey you embark upon with us is not just a trip but a chapter in your personal book of adventures. Join us at Travelbooklet — where your next story awaits.            </p>
+     </div>
+
+</body>
+</html>

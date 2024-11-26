@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBooklet</title>
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        nav {
+	    	position: fixed; 
+			top: 0;
+			left: 0;
+	        width: 100%; 
+
+			background-color:#333; 
+			color:#fff; 
+		
+	        display:flex;
+	        justify-content:center ;
+    	    align-items:center ; 
+        	padding:.5em;
+        	z-index:+2;
+
+		}
+
+	    .nav-left,.nav-center,.nav-right{
+	    	flex-grow :1 ;
+	    } 
+
+    	.nav-center > a {
+    		margin :0px 20px ; 
+    		text-decoration:none ;
+    		color:white ;
+    	}  
+
+
+                
+	   .introduction-text { 
+          	position:relative;/* Relative to its natural position */  
+		  	top :35% ;/* Down from top to give space from navbar */  
+		  	left :5% ;
+
+	        color:white ;/* Text color for readability against dark bg*/ 
+    		font-family:'Segoe UI', Tahoma, Geneva, Verdana,sans-serif ;
+    		text-shadow :-1px -1px #000,
+    					-2px -2px #000,
+    					-3px -3px #000;
+
+		  }
+        
+          .welcome-title {
+              font-size:60px; /* Large font size for the welcome title */
+              margin-bottom:16px; /* Space after title */
+          }
+
+          .introduction-paragraph {
+              font-size:12px; /* Smaller than the title but legible for introductory text */
+              max-width:400px; /* Maximum width of paragraph for better readability */
+              line-height:1.6; /* Spacing between lines within paragraph */
+          }
+        
+         
+        .contact-background {
+            position:absolute; 
+            top :0px; /* Offset by the height of the navigation bar */
+		    left :0 ;
+		    right :0 ;
+		    bottom :0 ;
+
+		    background-image:url('contact page.jpg');
+    	    background-size:cover;
+        	background-position:center center;
+	        background-repeat:no-repeat;
+
+		    z-index:-1; /* Behind contents but in front of any negative indexed items if present.*/
+		  }   
+          
+      .contact-form {
+	    top :30% ;/* Down from top to give space from navbar */  
+        width: 50%; /* Adjust as needed */
+        float: right;
+      }
+      .input-field {
+	    top :30% ;/* Down from top to give space from navbar */  
+        margin-bottom: 10px; 
+        display: block;
+      }
+      #message {
+	    top :30% ;/* Down from top to give space from navbar */  
+        height: 100px; /* Adjust as needed */
+        width: 80%; /* Adjust as needed */
+      }
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav><!-- Navigation -->
+        <!-- Left Aligned -->
+        <div class="nav-left">TravelBooklet</div>
+        
+        <!-- Center Aligned Links--> 
+        <div class="nav-center">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+    </nav>
+    <div class="contact-background"></div>
+
+        <div class="introduction-text">  
+            <h1 class="welcome-title">Contact Us</h1>   
+     </div>
+     
+     <div class="contact-form">
+        
+        <div class="introduction-text">  
+
+        <form action="/submit_contact_form" method="post">
+           
+          <!-- Name field --> 
+          <label for="name" >Name:</label><br/>
+          <input type="text" id="name" name="name" class='input-field'><br/>
+     
+          <!-- Email field -->
+          <label for="email">Email:</label><br/>
+          <input type="email" id="email" name=email class='input-field'><br/>
+     
+          <!-- Message textarea field -->
+          <label for=message>Message:</label><br/>
+          <textarea id=message name=message></textarea> 
+     
+         <!-- Submit button-->
+         <button type=submit>Submit</button>
+     
+     
+        </form>
+     
+     </div>
+
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBooklet</title>
+
+    <style>
+        body, html {
+            display: flex;
+            justify-content: space-between;
+            height: 100vh; /* vh stands for viewport height */
+        }   
+
+        nav {
+	    	position: fixed; 
+			top: 0;
+			left: 0;
+	        width: 100%; 
+
+			background-color:#333; 
+			color:#fff; 
+		
+	        display:flex;
+	        justify-content:center ;
+    	    align-items:center ; 
+        	padding:.5em;
+        	z-index:+2;
+
+		}
+
+	    .nav-left,.nav-center,.nav-right{
+	    	flex-grow :1 ;
+	    } 
+
+    	.nav-center > a {
+    		margin :0px 20px ; 
+    		text-decoration:none ;
+    		color:white ;
+    	}  
+
+	    .search-bar-container {
+		    display:flex ;  
+		    justify-content:flex-end ;   
+    	} 
+
+	    input[type='text']{
+	    	padding:.25em ;
+	    	margin-right:.5em ;	
+    	}
+    
+	    input[type='submit'],input[type='reset']{
+    	    padding:.25em .75em ;
+        	margin-right:.5em ;
+	        background-color:#f8f8f8;
+    	    border:none;
+        	cursor:pointer ;
+
+    	}
+
+
+        #resultsContainer {
+            width: 30%; 
+            position:absolute;
+            top :50px;
+            right :0 ;
+	        bottom :0 ;
+	        margin-right:.5em ;	
+        }
+
+
+        /* Full Page Background Image */
+        .home-background {
+            width:100%;
+            position:absolute; 
+            top :0; /* Offset by the height of the navigation bar */
+		    left :0 ;
+		    right :0 ;
+		    bottom :0 ;
+
+		    background-image:url('Home page.jpg');
+	        display:flex;
+	        justify-content:center ;
+    	    align-items:center ; 
+        	padding:.5em;
+
+		    z-index:-1; /* Behind contents but in front of any negative indexed items if present.*/
+		  }   
+
+	   .introduction-text { 
+          	position:relative;/* Relative to its natural position */  
+		  	top :-200px;/* Down from top to give space from navbar */  
+		  	left :-120px;
+
+	        color:white ;/* Text color for readability against dark bg*/ 
+    		font-family:'Segoe UI', Tahoma, Geneva, Verdana,sans-serif ;
+    		text-shadow :-1px -1px #000,
+    					-2px -2px #000,
+    					-3px -3px #000;
+
+		  }
+        
+          .welcome-title {
+              font-size:35px; /* Large font size for the welcome title */
+              margin-bottom:16px; /* Space after title */
+          }
+
+          .introduction-paragraph {
+              font-size:16px; /* Smaller than the title but legible for introductory text */
+              max-width:400px; /* Maximum width of paragraph for better readability */
+              line-height:1.6; /* Spacing between lines within paragraph */
+          }
+        
+    </style>
+
+</head>
+
+
+
+<body>
+
+    <nav><!-- Navigation -->
+        <!-- Left Aligned -->
+        <div class="nav-left">TravelBooklet</div>
+        
+        <!-- Center Aligned Links--> 
+        <div class="nav-center">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    <!-- Right Aligned Search Functionality-->
+    <div class="nav-right">
+        <form class ="search-bar-container" action ="" method ="GET"><!-- Assuming you have server-side code to handle GET request-->
+
+         <!-- Input for search query -->
+         <input type ="text" id="searchInput" placeholder ="Search..." name ="q">
+
+         <!-- Submit button for triggering search execution -->
+         <button type="submit">Search</button>
+
+         <!-- Reset button clears text field and results -->
+         <button type="clearButton" onclick="resetSearch()">clears</button>                                                                                                
+        </form>       
+    </div>
+</nav>
+   
+<div id="resultsContainer"></div>  
+
+      
+<!-- Home Page Background Content below Navbar-->
+<div class="home-background">
+
+    <!-- Introduction text centered within home-background area-->
+    <div class="introduction-text">  
+           <h1 class="welcome-title">Welcome to Travel Booklet</h1>   
+           <p class="introduction-paragraph">
+               Embark on a journey like no other with Travel Booklet – your curated guide through realms unknown and landscapes untouched. We pride ourselves on crafting unforgettable experiences that invigorate the soul and awaken the senses. Dive into cultures deep-rooted in history or bask on shores pristine and tranquil. Whether you're seeking adventure or tranquility, our local expertise ensures you'll have stories worth telling – not just memories made. Your odyssey awaits at Travel Booklet.
+           </p>
+    </div>
+
+
+
+
+</div>
+
+<script src="travel_recommendation.js"></script>
+
+
+</body>
+</html>
